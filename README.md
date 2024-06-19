@@ -54,16 +54,11 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 ---
 
 # Krystal DeFi audit details
-- Total Prize Pool: $20000 in USDC
-  - HM awards: $15840 in USDC
-  - (remove this line if there is no Analysis pool) Analysis awards: XXX XXX USDC (Notion: Analysis pool)
-  - QA awards: $660 in USDC
-  - (remove this line if there is no Bot race) Bot Race awards: XXX XXX USDC (Notion: Bot Race pool)
- 
-  - Judge awards: $3000 in USDC
-  - Lookout awards: XXX XXX USDC (Notion: Sum of Pre-sort fee + Pre-sort early bonus)
+- Total Prize Pool: $20,000 in USDC
+  - HM awards: $15,840 in USDC
+  - QA awards: $660 in USDC 
+  - Judge awards: $3,000 in USDC
   - Scout awards: $500 in USDC
-  - (this line can be removed if there is no mitigation) Mitigation Review: XXX XXX USDC (*Opportunity goes to top 3 backstage wardens based on placement in this audit who RSVP.*)
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2024-06-krystal-defi/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
