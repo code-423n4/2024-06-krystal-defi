@@ -20,9 +20,6 @@ This audit repo and its Discord channel are accessible to **certified wardens on
 
 *All discussions regarding private audits should be considered private and confidential, unless otherwise indicated.*
 
-Please review the following confidentiality requirements carefully, and if anything is unclear, ask questions in the private audit channel in the C4 Discord.
-
->>DRAG IN CLASSIFIED IMAGE HERE
 
 ## Automated Findings / Publicly Known Issues
 
