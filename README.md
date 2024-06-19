@@ -31,7 +31,14 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 
 # Overview
 
-[ ⭐️ SPONSORS: add info here ]
+Krystal's smart contracts simplify the experience of managing liquidity on concentrated liquidity DEXs, such as 
+Uniswap V3 or Quickswap V3, by providing these features:
+- **Zap In**: Swap any token and add the resulting liquidity to the pool.
+- **Adjust**: Withdraw all liquidity from your current position, including unclaimed fees, and then re-add it to a new position.
+- **Compound**: Claim your unclaimed fees and automatically add them back to your current position.
+- **Zap Out**: Withdraw all liquidity and unclaimed fees from your position, then swap them to any token. 
+Users can use any features above in one single transaction. They can leverage these features through the smart contract 
+`V3Utils` for manual control. Alternatively, they can allow Krystal to automate the process through the `V3Automation` smart contract.
 
 ## Links
 
@@ -46,18 +53,15 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 
 ### Files in scope
 
-[ ⭐️ SPONSORS: please fill in the purpose column ]
-
-
 *See [scope.txt](https://github.com/code-423n4/2024-06-krystal-defi/blob/main/scope.txt)*
 
 | File   | Logic Contracts | Interfaces | nSLOC | Purpose | Libraries used |
 | ------ | --------------- | ---------- | ----- | -----   | ------------ |
-| /src/Common.sol | 1| 1 | 555 | |v3-periphery/interfaces/external/IWETH9.sol<br>v3-periphery/interfaces/INonfungiblePositionManager.sol<br>@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol<br>v3-core/libraries/FullMath.sol<br>@openzeppelin/contracts/access/AccessControl.sol<br>@openzeppelin/contracts/utils/structs/EnumerableSet.sol<br>@openzeppelin/contracts/security/Pausable.sol|
+| /src/Common.sol | 1| 1 | 555 | Handles swap, manages liquidity and charges fees |v3-periphery/interfaces/external/IWETH9.sol<br>v3-periphery/interfaces/INonfungiblePositionManager.sol<br>@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol<br>v3-core/libraries/FullMath.sol<br>@openzeppelin/contracts/access/AccessControl.sol<br>@openzeppelin/contracts/utils/structs/EnumerableSet.sol<br>@openzeppelin/contracts/security/Pausable.sol|
 | /src/EIP712.sol | 1| **** | 35 | |@openzeppelin/contracts/utils/cryptography/ECDSA.sol|
 | /src/StructHash.sol | 1| **** | 231 | ||
-| /src/V3Automation.sol | 1| **** | 142 | ||
-| /src/V3Utils.sol | 1| **** | 174 | |@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol|
+| /src/V3Automation.sol | 1| **** | 142 | Executes users's order||
+| /src/V3Utils.sol | 1| **** | 174 | Helps users managing liquidity manually |@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol|
 | **Totals** | **5** | **1** | **1137** | | |
 
 ### Files out of scope
@@ -143,14 +147,11 @@ N/A
 
 ## All trusted roles in the protocol
 
-[ ⭐️ SPONSORS: please fill in the description column ]
-
-
 | Role                                | Description                       |
 | ----------------------------------- | ---------------------------- |
-| Owner                                |                   |
-| Operator                             |                        |
-| Withdrawer                           |                        |
+| Admin                                | Manage roles, set the maximum fees, pause/unpause contract operation, whitelist NFPM contracts, set fee taker address                  |
+| Operator                             | Execute automatic orders for users |
+| Withdrawer                           | Withdraw tokens (ERC-20, ERC-721) and native currency |
 
 ## Describe any novel or unique curve logic or mathematical models implemented in the contracts:
 
