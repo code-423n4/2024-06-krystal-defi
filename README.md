@@ -93,7 +93,7 @@ Users can use any features above in one single transaction. They can leverage th
 | Question                                | Answer                       |
 | --------------------------------------- | ---------------------------- |
 | ERC20 used by the protocol              |       Any             |
-| Test coverage                           | ✅ SCOUTS: Please populate this after running the test coverage command                          |
+| Test coverage                           | 84.43% (423/501 statements)          |
 | ERC721 used  by the protocol            |            ERC721 tokens which minted through NonfungiblePositionManager (NFPM) on Dexs (Uniswap V3, QuickSwap V3)  |
 | ERC777 used by the protocol             |           None              |
 | ERC1155 used by the protocol            |           None            |
@@ -164,6 +164,7 @@ N/A
 git clone https://github.com/code-423n4/2024-06-krystal-defi.git
 cd 2024-06-krystal-defi
 forge update # Install dependencies
+cp sample.env  .env
 
 forge test --gas-report
 ```
@@ -174,7 +175,14 @@ forge coverage
 ```
 
 
-✅ SCOUTS: Add a screenshot of your terminal showing the test coverage
+| File                 | % Lines          | % Statements     | % Branches       | % Funcs         |
+|----------------------|------------------|------------------|------------------|-----------------|
+| src/Common.sol       | 79.23% (164/207) | 82.75% (235/284) | 51.75% (59/114)  | 79.31% (23/29)  |
+| src/EIP712.sol       | 60.00% (3/5)     | 75.00% (6/8)     | 100.00% (0/0)    | 75.00% (3/4)    |
+| src/StructHash.sol   | 100.00% (16/16)  | 100.00% (32/32)  | 100.00% (0/0)    | 100.00% (16/16) |
+| src/V3Automation.sol | 82.26% (51/62)   | 82.86% (58/70)   | 55.26% (21/38)   | 85.71% (6/7)    |
+| src/V3Utils.sol      | 82.93% (68/82)   | 85.98% (92/107)  | 58.33% (28/48)   | 100.00% (4/4)   |
+| Total                | 81.18% (302/372) | 84.43% (423/501) | 54.00% (108/200)  | 86.67% (52/60) |
 
 ## Miscellaneous
 Employees of Krystal and employees' family members are ineligible to participate in this audit.
