@@ -1,0 +1,11 @@
+./script/Common.s.sol
+./script/Init.s.sol
+./script/StructHash.s.sol
+./script/V3Automation.s.sol
+./script/V3Utils.s.sol
+./script/Verify.s.sol
+./test/Helper.t.sol
+./test/IntegrationTestBase.sol
+./test/integration/Common.t.sol
+./test/integration/V3Automation.t.sol
+./test/integration/V3Utils.t.sol

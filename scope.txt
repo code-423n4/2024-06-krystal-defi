@@ -1,0 +1,5 @@
+./src/Common.sol
+./src/EIP712.sol
+./src/StructHash.sol
+./src/V3Automation.sol
+./src/V3Utils.sol
