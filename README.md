@@ -37,6 +37,7 @@ Uniswap V3 or Quickswap V3, by providing these features:
 - **Adjust**: Withdraw all liquidity from your current position, including unclaimed fees, and then re-add it to a new position.
 - **Compound**: Claim your unclaimed fees and automatically add them back to your current position.
 - **Zap Out**: Withdraw all liquidity and unclaimed fees from your position, then swap them to any token. 
+
 Users can use any features above in one single transaction. They can leverage these features through the smart contract 
 `V3Utils` for manual control. Alternatively, they can allow Krystal to automate the process through the `V3Automation` smart contract.
 
@@ -126,7 +127,7 @@ Users can use any features above in one single transaction. They can leverage th
 
 | Question                                                  | Answer |
 | --------------------------------------------------------- | ------ |
-| Enabling/disabling fees (e.g. Blur disables/enables fees) | Yes   |
+| Enabling/disabling fees (e.g. Blur disables/enables fees) | No   |
 | Pausability (e.g. Uniswap pool gets paused)               |  Yes   |
 | Upgradeability (e.g. Uniswap gets upgraded)               |   No  |
 
